@@ -15,7 +15,7 @@ input:focus {
   color: var(--gray-100);
   otline: var(--purple-dark);
 }
-button.create-button {
+button.createButton {
   background-color: var(--blue-dark);
   border: 0;
   border-radius: 0.50rem; /* 8px */
@@ -34,13 +34,13 @@ button.create-button {
   gap: 0.5rem;
 }
 
-button.create-button:hover {
+button.createButton:hover {
   background-color: var(--blue);
   color: var(--white);
   cursor: pointer;
 }
 
-.form-new-task {
+.formNewTask{
   display: flex;
   align-items: center;
   gap: 0.5rem;
