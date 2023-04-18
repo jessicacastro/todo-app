@@ -1,16 +1,18 @@
 .wrapper {
-  max-width: 70rem; // 1120px
+  max-width: 47rem; /* 750px */
   margin: 2rem auto;
   padding: 0 1rem;
   display: grid;
-  grid-template-columns: 256px 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
+  position: relative;
+  top: -60px;
 }
 
 @media (max-width: 768px) {
   html {
-    font-size: 87.5%; // 14px
+    font-size: 87.5%; /* 14px */
   }
 
   .wrapper {

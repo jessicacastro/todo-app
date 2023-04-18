@@ -1,0 +1,55 @@
+.todolist {
+  width: 100%;
+  margin-top: 4rem; /* 64px */
+  color: var(--gray-300)
+}
+
+.tasksInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* 16px */
+}
+
+.tasksInfo p {
+  font-size: 0.875rem; /* 14px */
+  line-height: 140%;
+  font-weight: 700;
+}
+
+.tasksInfo p span {
+  font-weight: 700;
+  background: var(--gray-400);
+  padding: 0px 0.5rem; /* 8px */
+  border-radius: 99999px;
+  color: var(--gray-200);
+  font-size: 0.75rem; /* 12px */
+}
+
+.tasksInfo p:first-child {
+  color: var(--blue);
+}
+
+.tasksInfo p:last-child {
+  color: var(--purple);
+}
+
+.emptyTaskList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  border-top: 1px solid var(--gray-300);
+
+  padding: 4rem; /* 16px */
+}
+
+.emptyTaskList img {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.emptyTaskList p {
+  font-size: 1rem; /* 16px */
+  line-height: 140%;
+}
