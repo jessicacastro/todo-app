@@ -8,10 +8,12 @@ import styles from "./TodoList.module.css"
 interface TodoListProps {
   todos: Todo[]
   amountToDoCreated: number
-  amountTodoFinished: number
+  amountTodoFinished: number,
+  onToggleTodo: (id: number) => void,
+  onDeleteTodo: (id: number) => void
 }
 
-export const TodoList = ({todos, amountToDoCreated, amountTodoFinished}: TodoListProps) => {
+export const TodoList = ({todos, amountToDoCreated, amountTodoFinished, onToggleTodo, onDeleteTodo}: TodoListProps) => {
   return(
     <section className={styles.todolist}>
       <div className={styles.tasksInfo}>
@@ -31,7 +33,11 @@ export const TodoList = ({todos, amountToDoCreated, amountTodoFinished}: TodoLis
 
       {
         todos && todos.map(todo => (
-          <TodoItem key={todo.id} {...todo} />
+          <TodoItem 
+            key={todo.id} 
+            onToggleTodo={onToggleTodo}
+            onDeleteTodo={onDeleteTodo}
+            {...todo} />
         ))
       }
     </section>
