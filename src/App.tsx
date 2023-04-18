@@ -11,6 +11,11 @@ export interface Todo {
   completed: boolean
 }
 
+interface createTodo {
+  title: string
+  callback: () => void
+}
+
 export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([
     {
@@ -25,14 +30,44 @@ export const App = () => {
     }
 ])
 
+const createTodo = (title: string) => {
+  const newTodo = {
+    id: todos.length + 1,
+    title: title,
+    completed: false
+  }
+
+  setTodos([...todos, newTodo])
+}
+
+const toggleTodo = (id: number) => {
+  const newTodos = todos.map(todo => {
+    if (todo.id === id) {
+      todo.completed = !todo.completed
+    }
+    return todo
+  })
+  setTodos(newTodos)
+}
+
+const deleteTodo = (id: number) => {
+  const newTodos = todos.filter(todo => todo.id !== id)
+  setTodos(newTodos)
+}
+
   const completedTodos = todos.filter(todo => todo.completed)
 
   return (
     <>
       <Header />
       <section className={styles.wrapper}>
-        <NewTask />
-        <TodoList todos={todos} amountToDoCreated={todos.length} amountTodoFinished={completedTodos.length} />
+        <NewTask onCreateNewTask={createTodo} />
+        <TodoList 
+          todos={todos} 
+          amountToDoCreated={todos.length} 
+          amountTodoFinished={completedTodos.length} 
+          onToggleTodo={toggleTodo} 
+          onDeleteTodo={deleteTodo} />
       </section>
     </>
   )
